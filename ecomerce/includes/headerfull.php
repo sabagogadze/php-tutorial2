@@ -14,20 +14,23 @@
 	     <?php endwhile; ?>
 	  </ul>
 	  <div class="carousel-inner">
-	  	<div class="carousel-item active">
+	  	<!-- <div class="carousel-item active">
 	      <img class="car_img" src="images/headerlogo/slider1.jpeg">
 	      <div class="carousel-caption">
 	        <h3>Los Angeles</h3>
 	        <p>We had such a great time in LA!</p>
 	      </div>   
-	    </div>
+	    </div> -->
 	  	<?php 
 	  	$sqlcarouselimg =  "SELECT * FROM `carusel image` WHERE 1";
 	  	$carouselresultimg = $db -> query($sqlcarouselimg);
+	  	$x=0;
 
 
 	  	while ($car_img = mysqli_fetch_assoc($carouselresultimg)): ?>
-	    <div class="carousel-item">
+	    <div class="carousel-item <?php  if ($x++ == 0) {echo " active";
+	    	
+	    } ?>">
 	      <img class="car_img" src="<?php echo $car_img['car_img'] ?>">
 	      <div class="carousel-caption">
 	        <h3>Los Angeles</h3>
@@ -37,16 +40,17 @@
 	    <?php endwhile; ?>
 	      
 	    </div> 
-
+	    	 <a class="carousel-control-prev" href="#demo" data-slide="prev">
+	    		<span class="carousel-control-prev-icon"></span>
+	  		</a>
+	  		<a class="carousel-control-next" href="#demo" data-slide="next">
+	    		<span class="carousel-control-next-icon"></span>
+	  		</a>
 
 	    </div>
+	   
 	  </div>
-	  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-	    <span class="carousel-control-prev-icon"></span>
-	  </a>
-	  <a class="carousel-control-next" href="#demo" data-slide="next">
-	    <span class="carousel-control-next-icon"></span>
-	  </a>
+	  
 	</div>
 </div>
 	<div class="container-fluid">

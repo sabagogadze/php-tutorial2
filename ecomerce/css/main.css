@@ -1,8 +1,4 @@
-﻿body {
-	padding-top: 70px;
-}
-
-
+﻿
 .img-thumb {
 	width: auto;
 	height: 200px;
@@ -24,3 +20,6 @@ img.details {
 
 }
 
+.carousel-control-prev {
+	margin-top: 70px;
+}

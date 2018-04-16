@@ -16,8 +16,5 @@ $mysql_db = 'tutorial';
 define('BASEURL', '/ecomerce/');
  
 
-require_once '../config.php';
-	include BASEURLS.'helpers/helpers.php';
-
-
+	
  ?>
