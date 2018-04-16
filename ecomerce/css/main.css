@@ -23,3 +23,9 @@ img.details {
 .carousel-control-prev {
 	margin-top: 70px;
 }
+body {
+overflow-x: hidden;
+overflow-y: scroll;
+
+
+}

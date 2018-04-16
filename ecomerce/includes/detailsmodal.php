@@ -26,7 +26,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid">
-							<div class="row">
+							<div class="row col-lg-12 col-md-12 col-sm-12 ">
 								<div class="col-sm-6">
 									<div class="center-block">
 										<img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>" class="details img-responsive">

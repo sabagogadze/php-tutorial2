@@ -10,7 +10,7 @@
         <a class="nav-link" href="brands.php">Brands <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="categories.php">Categories</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>

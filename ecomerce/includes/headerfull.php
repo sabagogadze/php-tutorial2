@@ -7,7 +7,7 @@
   ?>
 
 <div class="row">
-	<div id="demo" class="carousel slide" data-ride="carousel">
+	<div id="demo" class="carousel slide col-lg-12 col-md-12" data-ride="carousel">
 	  <ul class="carousel-indicators">
 	  	<?php while (mysqli_fetch_assoc($carouselresult)): ?>
 	    <li data-target="#demo" data-slide-to="<?php echo $count++; ?>" class="active"></li>

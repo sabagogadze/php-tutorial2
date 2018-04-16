@@ -26,7 +26,9 @@
   	$edit_result = $db -> query($sql_edit);
   	$eBrand = mysqli_fetch_assoc($edit_result);
   	
+  	
   }
+ 
 
   if (isset($_POST['add_submit'])) {
   		$brand = sanitize($_POST['brand']);
@@ -35,22 +37,28 @@
 	  	}
 	  	$sql = "SELECT * FROM brand WHERE brand = '$brand'";
 	  	if (isset($_GET['edit'])) {
-	  		$sql = "SELECT * FROM brand WHERE brand = '$brand' AND id !='$edit_id'";
+	  		$sql = "SELECT * FROM brand WHERE brand = '$brand' AND id != '$edit_id'";
 	  	}
 	  	$result = $db -> query($sql);
 	  	$count = mysqli_num_rows($result);
 	  	if ($count > 0) {
 	  		$errors[].= $brand.'  already exists!';
+
+
+
 	  	}
+
 
 	  	if (!empty($errors)) {
 	  		echo display_arrors($errors);
-	  	}else {
-	  		$sql = "INSERT INTO brand (brand) VALUES ('$brand')";
+	  	}
+	  	else {
+	  		$sql_insert = "INSERT INTO brand (brand) VALUES ('$brand')";
+	  		$sql_update = "UPDATE brand SET brand = '$brand' WHERE id = '$edit_id'";
 	  		if (isset($_GET['edit'])) {
-	  			$sql = "UPDATE brand SET brand = '$brand' WHERE id = '$edit_id'";
-	  		}
-	  		$db -> query($sql);
+	  			{$db -> query($sql_update);}
+	  		} else {$db -> query($sql_insert);}
+	  		
 	  		header('Location: brands.php');
 
 
@@ -61,7 +69,7 @@
 
 <h2 class="text-center">Brands</h2><hr>
 	<div class="text-center col-12">
-		<form class="form-inline " action="brands.php" method="post">
+		<form class="form-inline " action="brands.php<?=((isset($_GET['edit']))?'?edit='.$edit_id:''); ?>" method="post">
 			<div class="form-group">
 				<?php 
 					$brand_value = '';
